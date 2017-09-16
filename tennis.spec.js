@@ -101,7 +101,18 @@ describe('When player B get score',() => {
       
       expect(result).toBe('Love - Thirthy')
     })
-    
+    it('should echo "Love - Forthy"When score is 0-40',()=> {
+  repeatPlayerBGetScore(3)
+    let result = app.echo()
+
+expect(result).toBe('Love - Forthy')
+})
+it('should echo "Player B wins game"When player A gets next score at 0-40',()=> {
+ repeatPlayerBGetScore(4)
+    let result = app.echo()
+
+    expect(result).toBe('Player B wins game')
+    })
 
 })
 
